@@ -1,0 +1,75 @@
+<button onClick="changevid('videos/cat.mp4')"></button>
+
+<div class="videos">
+    <div class="active initial closing fechando">
+        <video autoplay loop muted preload="auto" id="change">
+            <source src="videos/cloud.mp4" type="video/mp4" width="1920" height="1080">
+        </video>
+	</div>
+</div>	
+
+
+	
+<script>
+	function changevid(buttonlink) {
+	document.getElementById('change').src = buttonlink;
+	setTimeout(function () {
+		const video = document.querySelector("#change");
+		video.pause();
+		}, 29000);
+	}/*
+	const button = document.querySelector('button');
+        button.addEventListener('click', function() {
+        button.style.display = 'none';
+    });
+	*/
+</script>
+
+<style>
+button, button:before {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+button {
+	width: 500px;
+	height: 500px;
+	cursor: pointer;
+	font-family: 'Play', sans-serif;
+	font-size: 20px;
+	color: white;
+	border: none;
+/*	border-radius: 25px; */
+	background-image: url("videos/testedobotao.png");
+/*	background-image: url("https://assets.codepen.io/3305358/hazard-stripes-wallpaper.jpg"); */
+	background-size: 100%;
+	background-position: center;
+	transition: 1s;
+}
+
+button:before {
+	width: 500px;
+	height: 500px;
+/*	content: 'Hazard'; */
+	background: rgba(0,0,0,0.6);
+/*	border-radius: 25px; */
+	position: absolute;
+	transition: 500ms;
+}
+
+button:hover:before {
+	background: rgba(0,0,0,0);
+	text-shadow: 1px 1px 1px black;
+}
+
+button:hover {
+	background-position: center;
+	box-shadow: 0px 0px 10px rgba(232, 218, 26, 0.5);
+	background-size: 90%;
+}
+
+button:focus {
+	outline: none;
+}
+</style>
